@@ -16,6 +16,11 @@ const store = new Vuex.Store({
     increment ({commit}) {
       commit('INCREMENT')
     }
+  },
+  getters: {
+    getCounter: state => {
+      return state.counter
+    }
   }
 })
 
