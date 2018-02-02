@@ -1,8 +1,8 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 
-import { INCREMENT } from './mutation-types'
 import { mutations } from './mutations'
+import { actions } from './actions'
 
 Vue.use(Vuex)
 
@@ -11,15 +11,7 @@ const store = new Vuex.Store({
     counter: 0
   },
   mutations: Object.assign({}, mutations),
-  actions: {
-    increment ({commit}) {
-      commit(INCREMENT)
-    }
-    // or
-    // increment (context) {
-    //   context.commit('INCREMENT')
-    // }
-  },
+  actions: Object.assign({}, actions),
   getters: {
     getCounter: state => {
       return state.counter
